@@ -1,0 +1,49 @@
+@startuml casoUsoOvalo
+left to right direction
+actor Alumno
+actor Profesor
+actor Administrativo
+actor Director
+
+rectangle "Sistema Multiplataforma de Gestión Académica - Ovalo Futuro" {
+    Alumno -- (Consultar Cursos Asignados)
+    Alumno -- (Consultar Notas)
+    Alumno -- (Consultar Asistencias)
+    Alumno -- (Consultar Cuotas Pendientes/Pagadas)
+    Alumno -- (Solicitar Ayuda con Chatbot)
+    Alumno -- (Actualizar Datos Personales)
+    Alumno -- (Consultar Horarios)
+
+    Profesor -- (Registrar Asistencias)
+    Profesor -- (Registrar Notas)
+    Profesor -- (Ver Lista de Alumnos Asignados)
+    Profesor -- (Consultar Cursos Asignados)
+    Profesor -- (Consultar Horarios)
+
+    Administrativo -- (Gestionar Admisiones)
+    Administrativo -- (Gestionar Pagos)
+    Administrativo -- (Generar Reportes)
+    Administrativo -- (Asignar Cursos)
+    Administrativo -- (Gestionar Horarios)
+    Administrativo -- (Configurar Parámetros del Sistema)
+    Administrativo -- (Gestionar Usuarios)
+
+    Director -- (Acceder a Todos los Módulos)
+    Director -- (Editar Información Crítica)
+    Director -- (Generar Reportes)
+    Director -- (Realizar Copias de Seguridad)
+
+    ' (Generar Reportes) -- (Generar Reporte de Asistencias)
+    ' (Generar Reportes) -- (Generar Reporte de Notas)
+    ' (Generar Reportes) -- (Generar Reporte Financiero)
+
+    ' Que "Generar Reportes" sea opcionalmente extendido por otros reportes, usa:
+
+    (Generar Reporte de Asistencias) ..|> (Generar Reportes) : <<extend>>
+    (Generar Reporte de Notas) ..|> (Generar Reportes) : <<extend>>
+    (Generar Reporte Financiero) ..|> (Generar Reportes) : <<extend>>
+
+
+}
+
+@enduml
